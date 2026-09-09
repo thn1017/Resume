@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐僡嬣 Winnie | 案例详情</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5E17EB',
+                        secondary: '#FFDE59',
+                        bg: '#FFFFFF',
+                        text: '#1E1E1E'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'PingFang SC', 'Microsoft YaHei', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #FFFFFF;
+            color: #1E1E1E;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-sm transition-shadow duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex flex-col leading-tight">
+                    <span class="text-lg sm:text-xl font-bold text-primary">唐僡嬣</span>
+                    <span class="text-xs sm:text-sm font-medium text-primary/70">Winnie</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="text-primary hover:text-primary/80 transition-colors">首页</a>
+                    <a href="index.html#about" class="text-primary hover:text-primary/80 transition-colors">关于我</a>
+                    <a href="index.html#experience" class="text-primary hover:text-primary/80 transition-colors">实习经历</a>
+                    <a href="index.html#portfolio" class="text-primary hover:text-primary/80 transition-colors">作品集</a>
+                    <a href="index.html#contact" class="text-primary hover:text-primary/80 transition-colors">联系我</a>
+                </div>
+                <button id="menu-btn" class="md:hidden text-primary" aria-label="Toggle menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-secondary/95 backdrop-blur-sm">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html#home" class="block text-primary hover:text-primary/80 transition-colors py-2">首页</a>
+                <a href="index.html#about" class="block text-primary hover:text-primary/80 transition-colors py-2">关于我</a>
+                <a href="index.html#experience" class="block text-primary hover:text-primary/80 transition-colors py-2">实习经历</a>
+                <a href="index.html#portfolio" class="block text-primary hover:text-primary/80 transition-colors py-2">作品集</a>
+                <a href="index.html#contact" class="block text-primary hover:text-primary/80 transition-colors py-2">联系我</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+        <div id="detail-container" class="min-h-screen">
+        </div>
+    </main>
+
+    <footer class="py-8 px-4 bg-text text-white text-center">
+        <p>&copy;2026 唐僡嬣 Winnie | 用 TRAE SOLO 打造</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            if (!isExpanded) {
+                menuBtn.innerHTML = '<i class="fas fa-times text-2xl"></i>';
+            } else {
+                menuBtn.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+            }
+        });
+
+        function parseStats(statsText) {
+            let html = '';
+            
+            const expMatch = statsText.match(/总曝光量达([\d.]+亿\+?)，溢出预期目标(\d+)%/);
+            if (expMatch) {
+                html += `
+                    <div class="bg-primary/5 rounded-xl p-4">
+                        <div class="text-xs text-gray-500">曝光量</div>
+                        <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">${expMatch[1]}</div>
+                        <div class="text-xs text-gray-500 mt-1">溢出预期 ${expMatch[2]}%</div>
+                    </div>
+                `;
+            }
+            
+            const ugcMatch = statsText.match(/UGC笔记量突破([\d.]+万篇)/);
+            if (ugcMatch) {
+                html += `
+                    <div class="bg-primary/5 rounded-xl p-4">
+                        <div class="text-xs text-gray-500">UGC笔记量</div>
+                        <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">${ugcMatch[1]}</div>
+                        <div class="text-xs text-gray-500 mt-1">远超预估目标</div>
+                    </div>
+                `;
+            }
+            
+            const penMatch = statsText.match(/自媒体创作人群渗透率([+\-][\d.]+%)，内容创作职业人群渗透率([+\-][\d.]+%)/);
+            if (penMatch) {
+                html += `
+                    <div class="bg-primary/5 rounded-xl p-4">
+                        <div class="text-xs text-gray-500">核心人群渗透率提升</div>
+                        <div class="mt-2 space-y-2">
+                            <div>
+                                <div class="text-lg font-bold text-primary">${penMatch[1]}</div>
+                                <div class="text-xs text-gray-500">自媒体创作人群</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold text-primary">${penMatch[2]}</div>
+                                <div class="text-xs text-gray-500">内容创作职业人群</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            const ctrMatch = statsText.match(/IP活动专区CTR达([\d.]+%)，品牌专区CTR ([\d.]+%)（benchmark (\d+)%），开屏CTR ([\d.]+%)（benchmark (\d+)%）/);
+            if (ctrMatch) {
+                html += `
+                    <div class="bg-primary/5 rounded-xl p-4">
+                        <div class="text-xs text-gray-500">专区CTR</div>
+                        <div class="mt-2 space-y-2">
+                            <div>
+                                <div class="text-lg font-bold text-primary">${ctrMatch[1]}</div>
+                                <div class="text-xs text-gray-500">IP活动专区</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold text-primary">${ctrMatch[2]}</div>
+                                <div class="text-xs text-gray-500">品牌专区 (benchmark ${ctrMatch[3]}%)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-primary/5 rounded-xl p-4">
+                        <div class="text-xs text-gray-500">开屏CTR</div>
+                        <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">${ctrMatch[4]}</div>
+                        <div class="text-xs text-gray-500 mt-1">benchmark ${ctrMatch[5]}%</div>
+                    </div>
+                `;
+            }
+            
+            if (!html) {
+                html = `<div class="col-span-full text-center text-gray-500 py-8">${statsText}</div>`;
+            }
+            
+            return html;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const title = params.get('title');
+            const desc = params.get('desc');
+            const stats = params.get('stats');
+            const image = params.get('image');
+            const category = params.get('category');
+
+            let categoryName = '';
+            if (category === 'marketing') categoryName = '营销策划方案';
+            else if (category === 'script') categoryName = '广告脚本';
+            else if (category === 'photography') categoryName = '摄影作品';
+
+            const container = document.getElementById('detail-container');
+            container.innerHTML = `
+                <div class="relative">
+                    <div class="h-[50vh] min-h-[300px]">
+                        <img src="${image || 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=creative%20marketing%20campaign%20visual&image_size=landscape_16_9'}" alt="${title}" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12 text-white">
+                        <div class="max-w-6xl mx-auto">
+                            <p class="text-secondary text-sm font-semibold mb-3">${categoryName}</p>
+                            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">${title || '案例详情'}</h1>
+                            <a href="index.html#portfolio" class="inline-flex items-center mt-6 text-white/80 hover:text-white transition-colors">
+                                <i class="fas fa-arrow-left mr-2"></i>
+                                <span>返回作品集</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+                    <div class="space-y-10">
+                        <div>
+                            <h2 class="text-2xl font-bold text-text mb-6 flex items-center">
+                                <span class="w-1 h-8 bg-primary mr-4 rounded-full"></span>
+                                项目概述
+                            </h2>
+                            <div class="bg-gray-50 rounded-xl p-6 lg:p-8">
+                                <p class="text-gray-600 leading-relaxed text-base lg:text-lg">${desc || '暂无详细内容'}</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-2xl font-bold text-text mb-6 flex items-center">
+                                <span class="w-1 h-8 bg-primary mr-4 rounded-full"></span>
+                                数据亮点
+                            </h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                ${parseStats(stats || '暂无数据')}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 text-center">
+                        <a href="index.html#portfolio" class="inline-flex items-center px-8 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            <span>返回作品集</span>
+                        </a>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

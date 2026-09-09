@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐僡嬣 Winnie | 个人作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5E17EB',
+                        secondary: '#FFDE59',
+                        bg: '#FFFFFF',
+                        text: '#1E1E1E'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'PingFang SC', 'Microsoft YaHei', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #FFFFFF;
+            color: #1E1E1E;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(94, 23, 235, 0.15);
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="#" class="flex flex-col leading-tight">
+                    <span class="text-lg sm:text-xl font-bold text-primary">唐僡嬣</span>
+                    <span class="text-xs sm:text-sm font-medium text-primary/70">Winnie</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-primary hover:text-primary/80 transition-colors">首页</a>
+                    <a href="#about" class="text-primary hover:text-primary/80 transition-colors">关于我</a>
+                    <a href="#experience" class="text-primary hover:text-primary/80 transition-colors">实习经历</a>
+                    <a href="#portfolio" class="text-primary hover:text-primary/80 transition-colors">作品集</a>
+                    <a href="#contact" class="text-primary hover:text-primary/80 transition-colors">联系我</a>
+                </div>
+
+                <button id="menu-btn" class="md:hidden text-primary hover:text-primary/80 p-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden bg-secondary border-t border-gray-200 hidden">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-primary hover:text-primary/80 py-2">首页</a>
+                <a href="#about" class="block text-primary hover:text-primary/80 py-2">关于我</a>
+                <a href="#experience" class="block text-primary hover:text-primary/80 py-2">实习经历</a>
+                <a href="#portfolio" class="block text-primary hover:text-primary/80 py-2">作品集</a>
+                <a href="#contact" class="block text-primary hover:text-primary/80 py-2">联系我</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('background.JPG')"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-transparent"></div>
+        <div class="max-w-[1200px] mx-auto w-full relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="font-bold text-text mb-4 leading-tight">
+                        <span class="block text-4xl sm:text-5xl lg:text-6xl">唐僡嬣</span>
+                        <span class="block text-xl sm:text-2xl lg:text-3xl font-medium text-primary/80 mt-2">Winnie</span>
+                    </h1>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">市场营销</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">营销策划</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">内容运营</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">商务执行</span>
+                    </div>
+                    <p class="text-lg sm:text-xl text-gray-600 mb-8">做有温度的营销</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#portfolio" class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                            <i class="fas fa-briefcase mr-2"></i>查看作品集
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary/5 transition-colors">
+                            <i class="fas fa-envelope mr-2"></i>联系我
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block flex justify-center">
+                    <div class="w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-secondary/30 flex items-center justify-center">
+                        <img src="avatar.jpg" alt="Winnie" class="w-48 h-48 rounded-full object-cover shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-[1200px] mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold text-text text-center mb-16">关于我</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-xl font-bold text-primary mb-6 flex items-center">
+                        <i class="fas fa-graduation-cap mr-3"></i>教育背景
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-xl shadow-sm">
+                            <h4 class="font-bold text-text">硕士</h4>
+                            <p class="text-primary font-semibold">北京大学</p>
+                            <p class="text-gray-600">新媒体研究院 | 新闻与传播（新媒体方向）</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm">
+                            <h4 class="font-bold text-text">本科</h4>
+                            <p class="text-primary font-semibold">中国传媒大学</p>
+                            <p class="text-gray-600">广告学院 | 主修：广告学 | 辅修：广播电视编导</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-xl font-bold text-primary mb-6 flex items-center">
+                        <i class="fas fa-star mr-3"></i>核心技能
+                    </h3>
+                    <div class="space-y-5">
+                        <div>
+                            <h4 class="font-semibold text-text mb-2">专业能力</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full">营销策划</span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full">新媒体运营</span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full">内容营销</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text mb-2">软件技能</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">SPSS</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">Python</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">Office</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">PS</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">秀米</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">可画</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">PR</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">剪映</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">AU</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text mb-2">语言能力</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full">大学英语六级</span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full">英语沟通能力</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1200px] mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold text-text text-center mb-16">实习经历</h2>
+            
+            <div class="space-y-10">
+                <div class="fade-in bg-white p-8 rounded-xl shadow-sm border-l-4 border-primary">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-text">小红书</h3>
+                            <p class="text-primary font-semibold">商业化市场营销中台-行业营销</p>
+                        </div>
+                        <span class="text-gray-500 text-sm mt-2 sm:mt-0">2026.1-2026.6</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-text mb-2">行业营销策划</h4>
+                            <p class="text-gray-600 text-sm">基于站内用户洞察，对接互联网行业头部客户，独立完成从策略构思、活动玩法设计、KOL&amp;KOC筛选到广告资源配置的全链路IP营销策划。在多行业实践中，提炼出了「场景-情绪-内容」的策划方法论，识别核心决策场景，捕捉情绪，设计内容玩法。生活服务类（美团等）紧抓节日消费节点造势；教育类（新东方、科大讯飞等）"课程产品"以名师IP降低家长决策门槛，"学习工具"聚焦学生提分痛点强化功能价值；金融类（招商银行等）锚定用卡/储蓄场景，把抽象功能嵌入具体消费节点；设计/AI（可画等）围绕创作场景、以功能体验为切口促产UGC。如在蚂蚁阿福项目中，精准识别春节"带健康回家"的情感需求，策划#把阿福带回家 话题，联动支付宝"集健康福"玩法，将品牌心智融入春节用户互动场景，活动累计曝光4.5亿+。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text mb-2">数据复盘总结</h4>
+                            <p class="text-gray-600 text-sm">收集整理项目全周期数据并撰写结案报告，通过曝光、互动、CTR等核心指标拆解用户参与路径与内容触达效率，为后续策划提供优化建议。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in bg-white p-8 rounded-xl shadow-sm border-l-4 border-primary">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-text">BBDO天联广告公司</h3>
+                            <p class="text-primary font-semibold">客户部-奔驰品牌内容营销</p>
+                        </div>
+                        <span class="text-gray-500 text-sm mt-2 sm:mt-0">2024.6-2024.10</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-text mb-2">小红书内容策划与运营</h4>
+                            <p class="text-gray-600 text-sm">负责奔驰小红书账号日常内容策划与运营，基于平台热点趋势及UGC内容洞察策划选题。例如洞察奔驰车分享宠物日常的偏好，将车型元素融入宠物游泳圈设计，以"泳池派对邀请函"的社交化形式策划《你收到了来自小朋狗的派对邀请》主题笔记，单篇阅读量达18w+为当月最佳，有效提升账号互动表现。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text mb-2">Social活动策划</h4>
+                            <p class="text-gray-600 text-sm">参与品牌social活动创意策划与执行。基于小红书"松弛感"生活趋势洞察，以"青松"谐音"轻松"为创意锚点，为奔驰EQA/EQB新车上市策划「青松奔驰，这很松弛」主题活动，将品牌心智与平台热点情绪绑定；联动KOC偶遇"青松奔驰"装置造声量，并引导奔驰车主共创"放轻松"内容，相关笔记累计阅读量20w+。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text mb-2">传播数据监测与策略优化</h4>
+                            <p class="text-gray-600 text-sm">负责账号数据监控与月度复盘，追踪互动量、阅读量及内容形式效率。6-9月通过优化选题与内容形式，最高带动总互动量增长175%、总阅读量增长227%；同时监测到视频效率优于图文，将视频产出占比从23%提升至53%，视频单篇互动效率提升164%。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in bg-white p-8 rounded-xl shadow-sm border-l-4 border-primary">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-text">米未传媒</h3>
+                            <p class="text-primary font-semibold">商务内容营销</p>
+                        </div>
+                        <span class="text-gray-500 text-sm mt-2 sm:mt-0">2023.5-2023.9</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-text mb-2">商务内容策划执行</h4>
+                            <p class="text-gray-600 text-sm">负责《乐队的夏天3》品牌商务植入策划，对接英特尔、百事可乐等品牌客户，从brief解读、创意构思到脚本落地，独立完成口播文案及广告植入脚本撰写，共输出8条节目广告脚本。为英特尔AI芯片设计采访间植入，利用麻园诗人"苦情vs甜歌"的反差人设，通过导演采访+AI建议+实际表演幽默反差的结构，让功能卖点随剧情原生露出，该脚本微博单条播放量达122w+。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-[1200px] mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold text-text text-center mb-16">作品集</h2>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-2 bg-primary text-white rounded-full" data-category="all">全部</button>
+                <button class="filter-btn px-6 py-2 bg-white text-text rounded-full hover:bg-primary/10 transition-colors" data-category="marketing">营销策划方案</button>
+                <button class="filter-btn px-6 py-2 bg-white text-text rounded-full hover:bg-primary/10 transition-colors" data-category="script">广告脚本</button>
+                <button class="filter-btn px-6 py-2 bg-white text-text rounded-full hover:bg-primary/10 transition-colors" data-category="photography">摄影作品</button>
+            </div>
+
+            <div id="portfolio-grid" class="space-y-6">
+                <div class="portfolio-card fade-in bg-white rounded-xl overflow-hidden shadow-sm card-hover cursor-pointer" data-category="marketing">
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-1/2 h-64 bg-primary/5 flex items-center justify-center">
+                            <img src="af1.png" alt="蚂蚁阿福把阿福带回家" class="w-full h-full object-contain">
+                        </div>
+                        <div class="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-text text-xl mb-2">蚂蚁阿福-带健康回家</h3>
+                                <p class="text-gray-500 text-sm mb-4">#把阿福带回家 · 营销策划方案</p>
+                                <p class="text-gray-600">借势春节"回家"情绪与支付宝集福流量，将AI健康工具转译为"家庭健康陪伴"，策划#把阿福带回家话题，联动支付宝集健康福红包实现从曝光到激活的闭环。</p>
+                            </div>
+                            <div class="mt-6 flex items-center text-primary">
+                                <span>查看详情</span>
+                                <i class="fas fa-chevron-down ml-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-detail hidden bg-gray-50">
+                        <div class="p-6 lg:p-12">
+                            <div class="max-w-4xl mx-auto space-y-8">
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        活动落地展示
+                                    </h4>
+                                    <div class="relative rounded-xl overflow-hidden shadow-md max-w-2xl mx-auto bg-primary/5">
+                                        <div class="flex transition-transform duration-500 ease-in-out" id="carousel-track-af">
+                                            <img src="af2.png" alt="活动落地图1" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="af3.png" alt="活动落地图2" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="af4.png" alt="活动落地图3" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="af5.png" alt="活动落地图4" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="af6.png" alt="活动落地图5" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                        </div>
+                                        <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-prev-af z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-left text-text"></i>
+                                        </button>
+                                        <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-next-af z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-right text-text"></i>
+                                        </button>
+                                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 carousel-indicators-af">
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white active:bg-primary transition-colors z-10" data-index="0" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="1" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="2" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="3" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="4" onclick="event.stopPropagation()"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        项目概述
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div class="text-gray-600 flex flex-wrap gap-x-4 gap-y-1">
+                                            <span><strong class="text-text">品牌</strong>：蚂蚁阿福</span>
+                                            <span><strong class="text-text">合作IP</strong>：小红书 × 支付宝集福</span>
+                                            <span><strong class="text-text">时间</strong>：2026.1—2</span>
+                                            <span><strong class="text-text">话题词</strong>：#把阿福带回家</span>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed">蚂蚁阿福刚完成品牌升级，客户想借春节把"健康问题就找阿福"的心智打出去。我洞察到春节最大的流量入口是支付宝集福，最核心的情绪是"回家"和对家人的牵挂，于是把阿福从"个人健康工具"转译成"家庭健康陪伴"，锚定"带健康回家"场景，提出#把阿福带回家#。流量端联动支付宝集福，用户通过小红书站内H5跳转蚂蚁阿福app领健康福红包，完成从曝光到激活的闭环；内容端用多圈层KOL分层渗透——头部做话题引爆，腰部做场景种草，AI和家庭向博主讲功能场景，剧情搞笑类博主走春节社交场景，公益向博主从乡村医生专业角度切入，个人成长类博主锚定新年健康计划，从家庭场景、社交情绪到个人规划完成多圈层覆盖。最终"健康问题就找阿福"从一句功能口号，变成了春节场景里的情感共识。</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-6 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        数据亮点
+                                    </h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">活动总曝光</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">4.54亿+</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">UGC笔记量</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">4.3万+篇</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">内容效率提升</div>
+                                            <div class="mt-2 space-y-2">
+                                                <div>
+                                                    <div class="text-lg font-bold text-primary">+5574%</div>
+                                                    <div class="text-xs text-gray-500">内容曝光量</div>
+                                                </div>
+                                                <div>
+                                                    <div class="text-lg font-bold text-primary">+3440%</div>
+                                                    <div class="text-xs text-gray-500">内容渗透率</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">品牌专区CTR (benchmark 24%)</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">46%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in bg-white rounded-xl overflow-hidden shadow-sm card-hover cursor-pointer" data-category="marketing">
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-1/2 h-64 bg-primary/5 flex items-center justify-center">
+                            <img src="canva1.png" alt="可画爆款封面设计大赛" class="w-full h-full object-contain">
+                        </div>
+                        <div class="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-text text-xl mb-2">可画-从灵感到爆款</h3>
+                                <p class="text-gray-500 text-sm mb-4">#爆款封面设计小赛 · 营销策划方案</p>
+                                <p class="text-gray-600">借势小红书「民间小赛」热潮，锁定自媒体创作者人群，以「封面设计」为切口，用轻量社交化的小赛形态降低参与门槛，实现从灵感到爆款的闭环。</p>
+                            </div>
+                            <div class="mt-6 flex items-center text-primary">
+                                <span>查看详情</span>
+                                <i class="fas fa-chevron-down ml-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-detail hidden bg-gray-50">
+                        <div class="p-6 lg:p-12">
+                            <div class="max-w-4xl mx-auto space-y-8">
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        活动落地展示
+                                    </h4>
+                                    <div class="relative rounded-xl overflow-hidden shadow-md max-w-2xl mx-auto bg-primary/5">
+                                        <div class="flex transition-transform duration-500 ease-in-out" id="carousel-track">
+                                            <img src="canva2.png" alt="活动落地图1" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="canva3.png" alt="活动落地图2" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="canva4.png" alt="活动落地图3" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="canva5.png" alt="活动落地图4" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="canva6.png" alt="活动落地图5" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="canva7.png" alt="活动落地图6" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                        </div>
+                                        <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-prev z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-left text-text"></i>
+                                        </button>
+                                        <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-next z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-right text-text"></i>
+                                        </button>
+                                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 carousel-indicators">
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white active:bg-primary transition-colors z-10" data-index="0" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="1" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="2" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="3" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="4" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="5" onclick="event.stopPropagation()"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        项目概述
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div class="text-gray-600 flex flex-wrap gap-x-4 gap-y-1">
+                                            <span><strong class="text-text">品牌</strong>：Canva可画</span>
+                                            <span><strong class="text-text">合作IP</strong>：小红书设计周</span>
+                                            <span><strong class="text-text">时间</strong>：2026.4.8—5.7</span>
+                                            <span><strong class="text-text">话题词</strong>：#爆款封面设计小赛 #从灵感到爆款</span>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed">Canva可画长期主打"低门槛设计工具"，但用户认知停留在"做海报的"，工具属性强、情感粘性弱，核心诉求是找到更精准的人群切口，把"工具能力"转化为"内容能力"。我洞察到小红书站内正兴起"民间小赛"热潮，同时自媒体创作者有一个极其具体的痛点——封面决定笔记生死，但很多人有灵感没技术。于是借势小赛形态，把目标收窄到自媒体创作者，策划「爆款封面设计小赛」，话题词#从灵感到爆款#。不走传统专业设计比赛路线，而是用小赛的轻量感和社交感降低参与门槛，让用户用可画AI或模板设计小红书封面，几分钟即可出图，真正实现从灵感到爆款的闭环。KOL围绕"封面焦虑"精选实用向博主——自媒体博主分享从0到1的设计过程、设计类博主拆解爆款封面特性、个人成长类博主从创作者进阶切入，用多元内容形态覆盖人群需求，核心都锚定在"怎么做封面"的实用价值上。</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-6 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        数据亮点
+                                    </h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">曝光量</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">3.18亿+</div>
+                                            <div class="text-xs text-gray-500 mt-1">溢出预期 478%</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">UGC笔记量</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">4.3万篇</div>
+                                            <div class="text-xs text-gray-500 mt-1">溢出预期 275%</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">核心人群渗透率提升</div>
+                                            <div class="mt-2 space-y-2">
+                                                <div>
+                                                    <div class="text-lg font-bold text-primary">+42.3%</div>
+                                                    <div class="text-xs text-gray-500">自媒体创作人群</div>
+                                                </div>
+                                                <div>
+                                                    <div class="text-lg font-bold text-primary">+54.31%</div>
+                                                    <div class="text-xs text-gray-500">内容创作职业人群</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">专区CTR (benchmark 6%)</div>
+                                            <div class="mt-2 space-y-2">
+                                                <div>
+                                                    <div class="text-lg font-bold text-primary">31.5%</div>
+                                                    <div class="text-xs text-gray-500">IP活动专区</div>
+                                                </div>
+                                                <div>
+                                                    <div class="text-lg font-bold text-primary">10.9%</div>
+                                                    <div class="text-xs text-gray-500">品牌专区</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in bg-white rounded-xl overflow-hidden shadow-sm card-hover cursor-pointer" data-category="marketing">
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-1/2 h-64 bg-primary/5 flex items-center justify-center">
+                            <img src="meituan1.jpg" alt="美团外卖黄衣服设计大赛" class="w-full h-full object-contain">
+                        </div>
+                        <div class="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-text text-xl mb-2">美团外卖-第一届黄衣服设计大赛</h3>
+                                <p class="text-gray-500 text-sm mb-4">#黄衣服设计大赛 · 营销策划方案</p>
+                                <p class="text-gray-600">美团外卖联合小红书设计周，发起「第一届黄衣服设计大赛」，以美团骑手标志性的“黄衣服”为创意核心，向全平台用户征集骑手工服设计灵感。</p>
+                            </div>
+                            <div class="mt-6 flex items-center text-primary">
+                                <span>查看详情</span>
+                                <i class="fas fa-chevron-down ml-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-detail hidden bg-gray-50">
+                        <div class="p-6 lg:p-12">
+                            <div class="max-w-4xl mx-auto space-y-8">
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        活动落地展示
+                                    </h4>
+                                    <div class="relative rounded-xl overflow-hidden shadow-md max-w-2xl mx-auto bg-primary/5">
+                                        <div class="flex transition-transform duration-500 ease-in-out" id="carousel-track-meituan">
+                                            <img src="meituan1.jpg" alt="活动落地图1" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="meituan2.jpg" alt="活动落地图2" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="meituan3.jpg" alt="活动落地图3" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="meituan4.jpg" alt="活动落地图4" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="meituan5.jpg" alt="活动落地图5" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="meituan6.jpg" alt="活动落地图6" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                        </div>
+                                        <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-prev-meituan z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-left text-text"></i>
+                                        </button>
+                                        <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-next-meituan z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-right text-text"></i>
+                                        </button>
+                                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 carousel-indicators-meituan">
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white active:bg-primary transition-colors z-10" data-index="0" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="1" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="2" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="3" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="4" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="5" onclick="event.stopPropagation()"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        项目概述
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div class="text-gray-600 flex flex-wrap gap-x-4 gap-y-1">
+                                            <span><strong class="text-text">品牌</strong>：美团外卖</span>
+                                            <span><strong class="text-text">合作IP</strong>：小红书设计周</span>
+                                            <span><strong class="text-text">时间</strong>：2026.4.1—5.16</span>
+                                            <span><strong class="text-text">话题词</strong>：#第一届黄衣服设计大赛</span>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed">美团外卖联合小红书设计周，发起「第一届黄衣服设计大赛」，以美团骑手标志性的“黄衣服”为创意核心，向全平台用户征集骑手工服设计灵感。活动鼓励用户从骑手真实需求出发，提交设计图或创意建议，将一件日常工服转化为可讨论、可共创的社会话题。通过低门槛的“全民参设计”机制——无论专业与否，人人都可提交设计想法——成功撬动大量UGC内容自发涌现，让品牌与用户之间形成了一次“你提需求、我来实现”的深度共创对话，有效提升了美团外卖的品牌话题热度与社会影响力。</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-6 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        数据亮点
+                                    </h4>
+                                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                        <div class="bg-primary/5 rounded-xl p-4 text-center">
+                                            <div class="text-xs text-gray-500">活动总曝光量</div>
+                                            <div class="text-xl font-bold text-primary mt-1">1.98亿+</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4 text-center">
+                                            <div class="text-xs text-gray-500">话题页浏览量</div>
+                                            <div class="text-xl font-bold text-primary mt-1">2,430万+</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4 text-center">
+                                            <div class="text-xs text-gray-500">UGC笔记量</div>
+                                            <div class="text-xl font-bold text-primary mt-1">4k+篇</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4 text-center">
+                                            <div class="text-xs text-gray-500">KOL曝光量</div>
+                                            <div class="text-xl font-bold text-primary mt-1">342万+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in bg-white rounded-xl overflow-hidden shadow-sm card-hover cursor-pointer" data-category="marketing">
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-1/2 h-64 bg-primary/5 flex items-center justify-center">
+                            <img src="xdf1.jpg" alt="新东方在线考研研路moment" class="w-full h-full object-contain">
+                        </div>
+                        <div class="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-text text-xl mb-2">新东方在线考研-我的研路moment</h3>
+                                <p class="text-gray-500 text-sm mb-4">#我的研路moment · 营销策划方案</p>
+                                <p class="text-gray-600">新东方在线考研联合小红书「红薯研学社」IP，在考研出分季发起话题活动，邀请考研人分享备考旅途中的成长瞬间。</p>
+                            </div>
+                            <div class="mt-6 flex items-center text-primary">
+                                <span>查看详情</span>
+                                <i class="fas fa-chevron-down ml-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-detail hidden bg-gray-50">
+                        <div class="p-6 lg:p-12">
+                            <div class="max-w-4xl mx-auto space-y-8">
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        活动落地展示
+                                    </h4>
+                                    <div class="relative rounded-xl overflow-hidden shadow-md max-w-2xl mx-auto bg-primary/5">
+                                        <div class="flex transition-transform duration-500 ease-in-out" id="carousel-track-xdf">
+                                            <img src="xdf2.jpg" alt="活动落地图1" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="xdf3.jpg" alt="活动落地图2" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="xdf4.jpg" alt="活动落地图3" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="xdf5.jpg" alt="活动落地图4" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="xdf6.jpg" alt="活动落地图5" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="xdf7.jpg" alt="活动落地图6" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="xdf8.jpg" alt="活动落地图7" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                        </div>
+                                        <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-prev-xdf z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-left text-text"></i>
+                                        </button>
+                                        <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-next-xdf z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-right text-text"></i>
+                                        </button>
+                                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 carousel-indicators-xdf">
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white active:bg-primary transition-colors z-10" data-index="0" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="1" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="2" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="3" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="4" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="5" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="6" onclick="event.stopPropagation()"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        项目概述
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div class="text-gray-600 flex flex-wrap gap-x-4 gap-y-1">
+                                            <span><strong class="text-text">品牌</strong>：新东方在线考研</span>
+                                            <span><strong class="text-text">合作IP</strong>：小红书「红薯研学社」</span>
+                                            <span><strong class="text-text">时间</strong>：2026.2.23—4.22</span>
+                                            <span><strong class="text-text">话题词</strong>：#我的研路moment</span>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed">新东方在线考研联合小红书「红薯研学社」IP，在考研出分季发起「我的研路moment」话题活动，邀请考研人分享备考旅途中的成长瞬间。活动以“研路时刻”这一情绪切口替代传统硬广说教，让品牌成为考研人情感共振的陪伴者。传播上创新采用考研名师IP化运营策略——王江涛、董仲蠡、谭剑波等新东方名师集体“破圈”出演创意微短剧（甄嬛传考研版、单词狼人杀、抽象直播等），在名师本人账号发布后实现病毒式传播，成功将“新东方=考研伙伴”的心智植入红薯地考研人群。</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-6 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        数据亮点
+                                    </h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">活动总曝光量</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">4.8亿+</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">UGC笔记沉淀</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">8.7万+篇</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">品牌人群资产提升</div>
+                                            <div class="mt-2 space-y-2">
+                                                <div>
+                                                    <div class="text-lg font-bold text-primary">+99.61%</div>
+                                                    <div class="text-xs text-gray-500">考研人群渗透率</div>
+                                                </div>
+                                                <div>
+                                                    <div class="text-lg font-bold text-primary">+178.83%</div>
+                                                    <div class="text-xs text-gray-500">在校考研SPU人群渗透率</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">KOL笔记曝光量</div>
+                                            <div class="text-lg font-bold text-primary mt-1">1,169万+</div>
+                                            <div class="mt-2 pt-2 border-t border-primary/10">
+                                                <div class="text-lg font-bold text-primary">62.7万+</div>
+                                                <div class="text-xs text-gray-500">三位名师笔记曝光总量</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in bg-white rounded-xl overflow-hidden shadow-sm card-hover cursor-pointer" data-category="marketing">
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-1/2 h-64 bg-primary/5 flex items-center justify-center">
+                            <img src="zyb1.jpg" alt="作业帮AI学习机AI家教请到家" class="w-full h-full object-contain">
+                        </div>
+                        <div class="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-text text-xl mb-2">作业帮AI学习机-AI家教请到家</h3>
+                                <p class="text-gray-500 text-sm mb-4">#AI家教请到家 · 营销策划方案</p>
+                                <p class="text-gray-600">作业帮AI学习机联合小红书「小红花家长会」IP，发起「AI家教请到家」话题活动，突出“AI家教”核心功能，将功能利益转化为家长可感知的“解放家长、精准助学”场景价值。</p>
+                            </div>
+                            <div class="mt-6 flex items-center text-primary">
+                                <span>查看详情</span>
+                                <i class="fas fa-chevron-down ml-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-detail hidden bg-gray-50">
+                        <div class="p-6 lg:p-12">
+                            <div class="max-w-4xl mx-auto space-y-8">
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        活动落地展示
+                                    </h4>
+                                    <div class="relative rounded-xl overflow-hidden shadow-md max-w-2xl mx-auto bg-primary/5">
+                                        <div class="flex transition-transform duration-500 ease-in-out" id="carousel-track-zyb">
+                                            <img src="zyb2.jpg" alt="活动落地图1" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zyb3.jpg" alt="活动落地图2" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zyb4.jpg" alt="活动落地图3" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zyb5.jpg" alt="活动落地图4" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zyb6.jpg" alt="活动落地图5" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zyb7.jpg" alt="活动落地图6" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zyb8.jpg" alt="活动落地图7" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zyb9.jpg" alt="活动落地图8" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zyb10.jpg" alt="活动落地图9" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zyb11.jpg" alt="活动落地图10" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zyb12.jpg" alt="活动落地图11" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                        </div>
+                                        <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-prev-zyb z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-left text-text"></i>
+                                        </button>
+                                        <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-next-zyb z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-right text-text"></i>
+                                        </button>
+                                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 carousel-indicators-zyb">
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white active:bg-primary transition-colors z-10" data-index="0" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="1" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="2" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="3" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="4" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="5" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="6" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="7" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="8" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="9" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="10" onclick="event.stopPropagation()"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        项目概述
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div class="text-gray-600 flex flex-wrap gap-x-4 gap-y-1">
+                                            <span><strong class="text-text">品牌</strong>：作业帮AI学习机</span>
+                                            <span><strong class="text-text">合作IP</strong>：小红书「小红花家长会」</span>
+                                            <span><strong class="text-text">时间</strong>：2026.5.20—6.18</span>
+                                        </div>
+                                        <div class="text-gray-600 flex flex-wrap gap-x-4 gap-y-1">
+                                            <span><strong class="text-text">品牌话题词</strong>：#AI家教请到家</span>
+                                            <span><strong class="text-text">IP主阵地话题词</strong>：#小红花家长会 ｜ #小红花AI学习好搭子 ｜ #618AI学习好物清单</span>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed">作业帮AI学习机联合小红书「小红花家长会」IP，发起「AI家教请到家」话题活动。本次活动重点在于精准筛选并强化作业帮AI学习机的核心功能认知——突出“AI家教”功能，围绕“AI精准学”“AI诊断”“AI辅导”等高价值功能点，以“把AI家教请到家”为沟通话术，将功能利益转化为家长可感知的“解放家长、精准助学”场景价值。活动深度绑定小红花家长会IP主阵地，获「小红花AI学习好搭子」官方推荐笔记及「618AI学习好物清单」专题植入，同时落地线下「AI学习体验展」快闪活动，打造「家的一平米」主题展位，实现“AI家教”功能教育—场景种草—线下体验的认知强化全链路。</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-6 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        数据亮点
+                                    </h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">活动总曝光量</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">9,830万</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">线下快闪客流量</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">9万+</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">UGC笔记沉淀量</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">3.5万+篇</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">人群渗透率增长</div>
+                                            <div class="mt-2 space-y-3">
+                                                <div>
+                                                    <div class="text-2xl sm:text-3xl font-bold text-primary">+218.7%</div>
+                                                    <div class="text-xs text-gray-500">品牌人群 · 教辅工具类</div>
+                                                </div>
+                                                <div>
+                                                    <div class="text-2xl sm:text-3xl font-bold text-primary">+414.5%</div>
+                                                    <div class="text-xs text-gray-500">SPU人群 · X60ultra学习机</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in bg-white rounded-xl overflow-hidden shadow-sm card-hover cursor-pointer" data-category="marketing">
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-1/2 h-64 bg-primary/5 flex items-center justify-center">
+                            <img src="zhkj1.jpg" alt="招商银行跨境有招不同返享" class="w-full h-full object-contain">
+                        </div>
+                        <div class="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-text text-xl mb-2">招商银行-跨境有招不同返享</h3>
+                                <p class="text-gray-500 text-sm mb-4">#跨境有招不同返享 · 营销策划方案</p>
+                                <p class="text-gray-600">招商银行联合小红书「海外薯·通关宝典」IP，以「招商银行万事达借记卡」为核心产品，传递"境内境外都好用，跨境支付不用愁"的核心主张。</p>
+                            </div>
+                            <div class="mt-6 flex items-center text-primary">
+                                <span>查看详情</span>
+                                <i class="fas fa-chevron-down ml-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-detail hidden bg-gray-50">
+                        <div class="p-6 lg:p-12">
+                            <div class="max-w-4xl mx-auto space-y-8">
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        活动落地展示
+                                    </h4>
+                                    <div class="relative rounded-xl overflow-hidden shadow-md max-w-2xl mx-auto bg-primary/5">
+                                        <div class="flex transition-transform duration-500 ease-in-out" id="carousel-track-zhkj">
+                                            <img src="zhkj2.jpg" alt="活动落地图1" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zhkj3.jpg" alt="活动落地图2" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zhkj4.jpg" alt="活动落地图3" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zhkj5.jpg" alt="活动落地图4" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zhkj6.jpg" alt="活动落地图5" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zhkj7.jpg" alt="活动落地图6" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                            <img src="zhkj8.jpg" alt="活动落地图7" class="w-full h-auto flex-shrink-0 max-h-[400px] object-contain">
+                                        </div>
+                                        <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-prev-zhkj z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-left text-text"></i>
+                                        </button>
+                                        <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors carousel-next-zhkj z-10" onclick="event.stopPropagation()">
+                                            <i class="fas fa-chevron-right text-text"></i>
+                                        </button>
+                                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 carousel-indicators-zhkj">
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white active:bg-primary transition-colors z-10" data-index="0" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="1" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="2" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="3" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="4" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="5" onclick="event.stopPropagation()"></button>
+                                            <button class="w-2 h-2 rounded-full bg-white/80 hover:bg-white transition-colors z-10" data-index="6" onclick="event.stopPropagation()"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        项目概述
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div class="text-gray-600 flex flex-wrap gap-x-4 gap-y-1">
+                                            <span><strong class="text-text">品牌</strong>：招商银行</span>
+                                            <span><strong class="text-text">合作IP</strong>：小红书「海外薯·通关宝典」</span>
+                                            <span><strong class="text-text">时间</strong>：2026.1.7—3.9</span>
+                                        </div>
+                                        <div class="text-gray-600 flex flex-wrap gap-x-4 gap-y-1">
+                                            <span><strong class="text-text">品牌话题词</strong>：#跨境有招不同返享</span>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed">招商银行联合小红书「海外薯·通关宝典」IP，发起「跨境有招不同返享」话题活动，以「招商银行万事达借记卡」为核心产品，传递“境内境外都好用，跨境支付不用愁”的核心主张。活动精准捕捉春节及寒假出境旅行高峰节点，通过话题活动、博主种草、线下快闪、H5聚合等全链路资源整合，将专业的跨境金融服务转化为用户可感知的出行场景解决方案——用真实的境外消费攻略、支付体验分享替代传统产品说教。活动深度绑定海外薯IP主阵地，并落地线下快闪互动展位，实现“攻略种草—场景验证—体验转化”的完整链路，成功抢占“跨境支付好搭子”的品类心智。</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-6 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        数据亮点
+                                    </h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">活动总曝光量</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">1.8亿+</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">KOL笔记累计曝光</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">1,072万+</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">UGC笔记沉淀量</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">5.1万+篇</div>
+                                        </div>
+                                        <div class="bg-primary/5 rounded-xl p-4">
+                                            <div class="text-xs text-gray-500">人群渗透率增长</div>
+                                            <div class="text-2xl sm:text-3xl font-bold text-primary mt-1">+1,050%</div>
+                                            <div class="text-xs text-gray-500 mt-1">借记卡类人群</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in bg-white rounded-xl overflow-hidden shadow-sm card-hover cursor-pointer" data-category="script">
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-1/2 h-64 lg:h-auto bg-primary/5 relative overflow-hidden">
+                            <img id="ggjb1-cover-card" alt="英特尔EVO超能本广告脚本封面" class="hidden w-full h-full object-cover">
+                            <div id="ggjb1-cover-card-placeholder" class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/15 to-secondary/20">
+                                <div class="text-center px-6">
+                                    <div class="w-16 h-16 mx-auto rounded-full bg-white/85 flex items-center justify-center shadow-md">
+                                        <i class="fas fa-play text-primary text-2xl ml-1"></i>
+                                    </div>
+                                    <p class="text-text font-semibold mt-4">点击展开查看视频案例</p>
+                                    <p class="text-gray-500 text-sm mt-2">支持的浏览器会自动显示视频封面</p>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none"></div>
+                            <video id="ggjb1-poster-source" class="absolute w-px h-px opacity-0 pointer-events-none -z-10" muted preload="auto" playsinline aria-hidden="true" src="ggjb1.mp4"></video>
+                        </div>
+                        <div class="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-text text-xl mb-2">英特尔EVO超能本-AIGC创作超给力</h3>
+                                <p class="text-gray-500 text-sm mb-4">乐队的夏天3 · 广告脚本</p>
+                                <p class="text-gray-600">英特尔EVO超能本借势《乐队的夏天3》中麻园诗人改编《彩虹的微笑》高热事件，以采访间对话形式演绎AI为乐队成员上场前支招的幽默反差广告。</p>
+                            </div>
+                            <div class="mt-6 flex items-center text-primary">
+                                <span>查看详情</span>
+                                <i class="fas fa-chevron-down ml-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-detail hidden bg-gray-50">
+                        <div class="p-6 lg:p-12">
+                            <div class="max-w-4xl mx-auto space-y-8">
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        作品展示
+                                    </h4>
+                                    <div class="rounded-xl overflow-hidden shadow-md max-w-2xl mx-auto bg-black" onclick="event.stopPropagation()">
+                                        <video id="ggjb1-video" class="w-full h-auto max-h-[400px]" controls preload="metadata" playsinline src="ggjb1.mp4">
+                                            您的浏览器暂不支持视频播放，请直接下载查看。
+                                        </video>
+                                    </div>
+                                    <div class="mt-4 text-center" onclick="event.stopPropagation()">
+                                        <a href="ggjb1.mp4" download class="inline-flex items-center justify-center px-5 py-2 border border-primary text-primary rounded-full hover:bg-primary/5 transition-colors">
+                                            <i class="fas fa-download mr-2"></i>下载视频查看
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-4 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        项目概述
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div class="text-gray-600 flex flex-wrap gap-x-4 gap-y-1">
+                                            <span><strong class="text-text">品牌</strong>：英特尔</span>
+                                            <span><strong class="text-text">产品</strong>：英特尔EVO超能本（内置AI对话功能）</span>
+                                            <span><strong class="text-text">Slogan</strong>：英特尔EVO超能本，AIGC创作超给力</span>
+                                            <span><strong class="text-text">合作IP</strong>：乐队的夏天3</span>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed">英特尔EVO超能本借势《乐队的夏天3》中麻园诗人改编《彩虹的微笑》这一高热度事件，以采访间对话形式拍摄品牌TVC。短片创意设定为：麻园诗人在上场前向英特尔EVO超能本内置的AI对话功能请教表演建议，AI给出“表情要自然、眼神要深情、嘴角要上扬、身体要放松”四个回答，每位成员认领一条后，画面回放其在节目中“努力营业”的幽默反差片段，形成强喜剧效果。结尾借节目中“特别好”的经典梗收尾，由AI说出“亚东老师会说特别好”，将节目热梗、AI功能与品牌 slogan 自然串联，以娱乐化内容降低AI技术的认知门槛，生动传递“英特尔EVO超能本帮助创作者高效产出”的核心价值。</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-text mb-6 flex items-center">
+                                        <span class="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                                        核心数据亮点
+                                    </h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                        <div class="bg-primary/5 rounded-xl p-5">
+                                            <div class="text-xs text-gray-500">微博视频播放量</div>
+                                            <div class="text-3xl sm:text-4xl font-bold text-primary mt-2">122万+</div>
+                                            <div class="text-sm text-gray-500 mt-2">为所有植入广告中表现最优</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="portfolio-card fade-in bg-white rounded-xl overflow-hidden shadow-sm" data-category="photography">
+                    <div class="p-6 lg:p-8">
+                        <h3 class="font-bold text-text text-xl mb-6">摄影作品</h3>
+                        <div class="columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-3 space-y-3">
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_7117_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_8285_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_7121_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_8288.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_7158_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_8289_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_7159_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_8290.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_7160_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_8291_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_7161_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_7162_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_8292_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_7163_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_8294_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_7164_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_8295.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_8296_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/微信图片_2025-08-07_012540_320_副本.jpg" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/微信图片_2025-08-07_012842_177_副本.jpg" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/微信图片_2025-08-07_012847_497_副本.jpg" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/微信图片_2025-08-07_012852_593_副本.jpg" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/微信图片_2025-08-07_012856_039_副本.jpg" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/微信图片_2025-08-07_012901_214_副本.jpg" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/微信图片_2025-08-07_012905_647_副本.jpg" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/微信图片_2025-08-07_012913_569_副本.jpg" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/微信图片_2025-08-07_012939_727_副本.jpg" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/1D4A9194_副本.jpg" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="break-inside-avoid rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
+                                <img src="photo/IMG_4056_副本.JPG" alt="摄影作品" class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1200px] mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold text-text text-center mb-16">联系我</h2>
+            
+            <div class="fade-in bg-gradient-to-br from-primary/10 to-secondary/20 rounded-2xl p-8 sm:p-12">
+                <div class="space-y-6">
+                    <div class="flex items-center justify-start gap-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm">邮箱</p>
+                            <p class="text-text font-semibold">2390339825@qq.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-start gap-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0">
+                            <i class="fab fa-weixin"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm">微信号</p>
+                            <p class="text-text font-semibold">t15522039171</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-start gap-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white flex-shrink-0">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm">电话</p>
+                            <p class="text-text font-semibold">15522039171</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="唐僡嬣-个人简历.pdf" download class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                            <i class="fas fa-download mr-2"></i>简历下载
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-4 bg-text text-white text-center">
+        <p>&copy;2026 唐僡嬣 Winnie | 用 TRAE SOLO 打造</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.innerHTML = isExpanded ? '<i class="fas fa-bars text-xl"></i>' : '<i class="fas fa-times text-xl"></i>';
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-primary', 'text-white');
+                    b.classList.add('bg-white', 'text-text');
+                });
+                btn.classList.remove('bg-white', 'text-text');
+                btn.classList.add('active', 'bg-primary', 'text-white');
+
+                const category = btn.getAttribute('data-category');
+                
+                portfolioCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        portfolioCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const detail = card.querySelector('.portfolio-detail');
+                const icon = card.querySelector('.fa-chevron-down');
+                
+                if (detail.classList.contains('hidden')) {
+                    detail.classList.remove('hidden');
+                    detail.style.maxHeight = detail.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                    setTimeout(() => {
+                        initCarousel('carousel-track-af');
+                        initCarousel('carousel-track');
+                        initCarousel('carousel-track-meituan');
+                        initCarousel('carousel-track-xdf');
+                        initCarousel('carousel-track-zyb');
+                        initCarousel('carousel-track-zhkj');
+                    }, 100);
+                } else {
+                    detail.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        function initCarousel(trackId) {
+            const track = document.getElementById(trackId);
+            if (!track) return;
+            
+            const suffix = trackId.includes('meituan') ? '-meituan' : trackId.includes('xdf') ? '-xdf' : trackId.includes('zyb') ? '-zyb' : trackId.includes('zhkj') ? '-zhkj' : trackId.includes('af') ? '-af' : '';
+            const slides = track.querySelectorAll('img');
+            const prevBtn = track.parentElement.querySelector('.carousel-prev' + suffix);
+            const nextBtn = track.parentElement.querySelector('.carousel-next' + suffix);
+            const indicators = track.parentElement.querySelectorAll('.carousel-indicators' + suffix + ' button');
+            let currentIndex = 0;
+            let autoPlayInterval;
+
+            function updateCarousel() {
+                const slideWidth = track.offsetWidth;
+                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('bg-primary');
+                        indicator.classList.remove('bg-white/80');
+                    } else {
+                        indicator.classList.remove('bg-primary');
+                        indicator.classList.add('bg-white/80');
+                    }
+                });
+            }
+
+            function startAutoPlay() {
+                stopAutoPlay();
+                autoPlayInterval = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateCarousel();
+                }, 4000);
+            }
+
+            function stopAutoPlay() {
+                if (autoPlayInterval) {
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = null;
+                }
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+
+            track.parentElement.addEventListener('mouseenter', stopAutoPlay);
+            track.parentElement.addEventListener('mouseleave', startAutoPlay);
+
+            updateCarousel();
+            startAutoPlay();
+
+            window.addEventListener('resize', updateCarousel);
+        }
+
+        function generateVideoPoster(videoId, selectors, seekTime = 1.5) {
+            const targets = selectors
+                .map((selector) => document.querySelector(selector))
+                .filter(Boolean);
+            const sourceVideo = document.getElementById(videoId);
+
+            if (!targets.length || !sourceVideo) return;
+
+            const captureFrame = () => {
+                if (!sourceVideo.videoWidth || !sourceVideo.videoHeight) return;
+
+                const canvas = document.createElement('canvas');
+                canvas.width = sourceVideo.videoWidth;
+                canvas.height = sourceVideo.videoHeight;
+
+                const context = canvas.getContext('2d');
+                if (!context) return;
+
+                context.drawImage(sourceVideo, 0, 0, canvas.width, canvas.height);
+                const posterDataUrl = canvas.toDataURL('image/jpeg', 0.9);
+
+                targets.forEach((target) => {
+                    if (target.tagName === 'VIDEO') {
+                        target.poster = posterDataUrl;
+                    } else if (target.tagName === 'IMG') {
+                        target.src = posterDataUrl;
+                        target.classList.remove('hidden');
+                    }
+                });
+
+                const placeholder = document.getElementById('ggjb1-cover-card-placeholder');
+                if (placeholder) {
+                    placeholder.classList.add('hidden');
+                }
+            };
+
+            const requestFrameCapture = () => {
+                const safeTime = Math.min(seekTime, Math.max(sourceVideo.duration - 0.1, 0));
+                if (safeTime > 0) {
+                    sourceVideo.currentTime = safeTime;
+                } else {
+                    captureFrame();
+                }
+            };
+
+            sourceVideo.addEventListener('seeked', captureFrame, { once: true });
+
+            if (sourceVideo.readyState >= 1) {
+                requestFrameCapture();
+            } else {
+                sourceVideo.addEventListener('loadedmetadata', requestFrameCapture, { once: true });
+                sourceVideo.load();
+            }
+        }
+
+        generateVideoPoster('ggjb1-poster-source', ['#ggjb1-cover-card', '#ggjb1-video']);
+
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        const sections = document.querySelectorAll('section[id]');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-primary');
+                        link.classList.add('text-text');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.remove('text-text');
+                            link.classList.add('text-primary');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => navObserver.observe(section));
+    </script>
+</body>
+</html>

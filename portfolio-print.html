@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>唐僡嬣 Winnie - 个人作品集</title>
+<style>
+  @page { margin: 0; size: A4; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif; color: #2d3436; line-height: 1.7; font-size: 14px; }
+  .page { width: 210mm; min-height: 297mm; padding: 18mm 16mm; position: relative; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  /* Colors */
+  :root { --primary: #6c5ce7; --text: #2d3436; --light: #f5f5fa; }
+
+  /* Cover */
+  .cover { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 297mm; padding: 30mm 20mm; background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #dfe6e9 100%); color: #fff; }
+  .cover h1 { font-size: 52px; font-weight: 800; margin-bottom: 8px; letter-spacing: 4px; }
+  .cover .subtitle { font-size: 22px; font-weight: 500; opacity: 0.85; margin-bottom: 24px; letter-spacing: 2px; }
+  .cover .tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; }
+  .cover .tag { background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 13px; }
+  .cover .tagline { font-size: 18px; opacity: 0.8; margin-top: 16px; font-style: italic; }
+  .cover .info { margin-top: 40px; font-size: 13px; opacity: 0.7; line-height: 2; }
+
+  /* Section headers */
+  h2 { font-size: 24px; font-weight: 700; color: #2d3436; margin-bottom: 20px; padding-left: 12px; border-left: 4px solid #6c5ce7; }
+  h4 { font-size: 15px; font-weight: 600; color: #6c5ce7; margin-bottom: 4px; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .edu-card { background: #f5f5fa; border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; }
+  .edu-card h4 { color: #2d3436; }
+  .edu-card .school { color: #6c5ce7; font-weight: 600; font-size: 14px; }
+  .edu-card .detail { color: #666; font-size: 13px; }
+  .skill-group { margin-bottom: 12px; }
+  .skill-group h4 { margin-bottom: 6px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag { background: rgba(108,92,231,0.1); color: #6c5ce7; padding: 4px 12px; border-radius: 15px; font-size: 12px; font-weight: 500; }
+
+  /* Experience */
+  .exp-card { border-left: 4px solid #6c5ce7; padding: 12px 0 12px 16px; margin-bottom: 16px; }
+  .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .exp-company { font-size: 17px; font-weight: 700; }
+  .exp-role { color: #6c5ce7; font-weight: 600; font-size: 14px; }
+  .exp-date { color: #999; font-size: 12px; }
+  .exp-sub h4 { font-size: 14px; color: #2d3436; margin-bottom: 3px; }
+  .exp-sub p { font-size: 13px; color: #555; line-height: 1.65; }
+  .exp-sub { margin-bottom: 10px; }
+
+  /* Portfolio */
+  .project { margin-bottom: 18px; page-break-inside: avoid; }
+  .project-header { display: flex; gap: 12px; align-items: flex-start; }
+  .project-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+  .project-title { font-size: 16px; font-weight: 700; color: #2d3436; }
+  .project-tag { font-size: 12px; color: #999; margin-bottom: 4px; }
+  .project-info { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: #666; margin: 6px 0; }
+  .project-info strong { color: #2d3436; }
+  .project-overview { font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 8px; }
+  .data-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 6px; }
+  .data-card { background: #f5f5fa; border-radius: 8px; padding: 8px 10px; text-align: center; }
+  .data-label { font-size: 11px; color: #999; }
+  .data-value { font-size: 17px; font-weight: 700; color: #6c5ce7; margin-top: 2px; }
+  .data-sub { font-size: 10px; color: #999; margin-top: 2px; }
+
+  /* Divider */
+  .divider { height: 1px; background: #eee; margin: 12px 0; }
+</style>
+</head>
+<body>
+
+<!-- Cover Page -->
+<div class="cover">
+  <h1>唐僡嬣</h1>
+  <div class="subtitle">Winnie</div>
+  <div class="tags">
+    <span class="tag">市场营销</span>
+    <span class="tag">营销策划</span>
+    <span class="tag">内容运营</span>
+    <span class="tag">商务执行</span>
+  </div>
+  <div class="tagline">做有温度的营销</div>
+  <div class="info">
+    邮箱：2390339825@qq.com<br>
+    微信：t15522039171<br>
+    电话：15522039171
+  </div>
+</div>
+
+<!-- Page 2: 关于我 + 小红书 -->
+<div class="page">
+  <h2>关于我</h2>
+  <div class="about-grid">
+    <div>
+      <h4 style="color:#6c5ce7;margin-bottom:10px;">教育背景</h4>
+      <div class="edu-card">
+        <h4>硕士</h4>
+        <div class="school">北京大学</div>
+        <div class="detail">新媒体研究院 | 新闻与传播（新媒体方向）</div>
+      </div>
+      <div class="edu-card">
+        <h4>本科</h4>
+        <div class="school">中国传媒大学</div>
+        <div class="detail">广告学院 | 主修：广告学 | 辅修：广播电视编导</div>
+      </div>
+    </div>
+    <div>
+      <h4 style="color:#6c5ce7;margin-bottom:10px;">核心技能</h4>
+      <div class="skill-group">
+        <div class="skill-tags">
+          <span class="skill-tag">营销策划</span>
+          <span class="skill-tag">新媒体运营</span>
+          <span class="skill-tag">内容营销</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4 style="font-size:13px;">软件技能</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">SPSS</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Office</span>
+          <span class="skill-tag">PS</span>
+          <span class="skill-tag">秀米</span>
+          <span class="skill-tag">可画</span>
+          <span class="skill-tag">PR</span>
+          <span class="skill-tag">剪映</span>
+          <span class="skill-tag">AU</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4 style="font-size:13px;">语言能力</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">大学英语六级</span>
+          <span class="skill-tag">英语沟通能力</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:24px;">实习经历</h2>
+
+  <div class="exp-card">
+    <div class="exp-header">
+      <div>
+        <span class="exp-company">小红书</span>
+        <span class="exp-role" style="margin-left:8px;">商业化市场营销中台-行业营销</span>
+      </div>
+      <span class="exp-date">2026.1-2026.6</span>
+    </div>
+    <div class="exp-sub">
+      <h4>行业营销策划</h4>
+      <p>基于站内用户洞察，对接互联网行业头部客户，独立完成从策略构思、活动玩法设计、KOL&amp;KOC筛选到广告资源配置的全链路IP营销策划。在多行业实践中，提炼出了「场景-情绪-内容」的策划方法论，识别核心决策场景，捕捉情绪，设计内容玩法。生活服务类（美团等）紧抓节日消费节点造势；教育类（新东方、科大讯飞等）"课程产品"以名师IP降低家长决策门槛，"学习工具"聚焦学生提分痛点强化功能价值；金融类（招商银行等）锚定用卡/储蓄场景，把抽象功能嵌入具体消费节点；设计/AI（可画等）围绕创作场景、以功能体验为切口促产UGC。如在蚂蚁阿福项目中，精准识别春节"带健康回家"的情感需求，策划#把阿福带回家 话题，联动支付宝"集健康福"玩法，将品牌心智融入春节用户互动场景，活动累计曝光4.5亿+。</p>
+    </div>
+    <div class="exp-sub">
+      <h4>数据复盘总结</h4>
+      <p>收集整理项目全周期数据并撰写结案报告，通过曝光、互动、CTR等核心指标拆解用户参与路径与内容触达效率，为后续策划提供优化建议。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Page 3: BBDO + 米未 -->
+<div class="page">
+  <h2>实习经历（续）</h2>
+
+  <div class="exp-card">
+    <div class="exp-header">
+      <div>
+        <span class="exp-company">BBDO天联广告公司</span>
+        <span class="exp-role" style="margin-left:8px;">客户部-奔驰品牌内容营销</span>
+      </div>
+      <span class="exp-date">2024.6-2024.10</span>
+    </div>
+    <div class="exp-sub">
+      <h4>小红书内容策划与运营</h4>
+      <p>负责奔驰小红书账号日常内容策划与运营，基于平台热点趋势及UGC内容洞察策划选题。例如洞察奔驰车分享宠物日常的偏好，将车型元素融入宠物游泳圈设计，以"泳池派对邀请函"的社交化形式策划《你收到了来自小朋狗的派对邀请》主题笔记，单篇阅读量达18w+为当月最佳，有效提升账号互动表现。</p>
+    </div>
+    <div class="exp-sub">
+      <h4>Social活动策划</h4>
+      <p>参与品牌social活动创意策划与执行。基于小红书"松弛感"生活趋势洞察，以"青松"谐音"轻松"为创意锚点，为奔驰EQA/EXB新车上市策划「青松奔驰，这很松弛」主题活动，将品牌心智与平台热点情绪绑定；联动KOC偶遇"青松奔驰"装置造声量，并引导奔驰车主共创"放轻松"内容，相关笔记累计阅读量20w+。</p>
+    </div>
+    <div class="exp-sub">
+      <h4>传播数据监测与策略优化</h4>
+      <p>负责账号数据监控与月度复盘，追踪互动量、阅读量及内容形式效率。6-9月通过优化选题与内容形式，最高带动总互动量增长175%、总阅读量增长227%；同时监测到视频效率优于图文，将视频产出占比从23%提升至53%，视频单篇互动效率提升164%。</p>
+    </div>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-header">
+      <div>
+        <span class="exp-company">米未传媒</span>
+        <span class="exp-role" style="margin-left:8px;">商务内容营销</span>
+      </div>
+      <span class="exp-date">2023.5-2023.9</span>
+    </div>
+    <div class="exp-sub">
+      <h4>商务内容策划执行</h4>
+      <p>负责《乐队的夏天3》品牌商务植入策划，对接英特尔、百事可乐等品牌客户，从brief解读、创意构思到脚本落地，独立完成口播文案及广告植入脚本撰写，共输出8条节目广告脚本。为英特尔AI芯片设计采访间植入，利用麻园诗人"苦情vs甜歌"的反差人设，通过导演采访+AI建议+实际表演幽默反差的结构，让功能卖点随剧情原生露出，该脚本微博单条播放量达122w+。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Page 4: 蚂蚁阿福 + 可画 -->
+<div class="page">
+  <h2>作品集</h2>
+
+  <!-- 蚂蚁阿福 -->
+  <div class="project">
+    <div class="project-header">
+      <img src="af1.png" class="project-img" alt="蚂蚁阿福">
+      <div>
+        <div class="project-title">蚂蚁阿福-带健康回家</div>
+        <div class="project-tag">#把阿福带回家 · 营销策划方案</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <span><strong>品牌</strong>：蚂蚁阿福</span>
+      <span><strong>合作IP</strong>：小红书 × 支付宝集福</span>
+      <span><strong>时间</strong>：2026.1—2</span>
+      <span><strong>话题词</strong>：#把阿福带回家</span>
+    </div>
+    <p class="project-overview">蚂蚁阿福刚完成品牌升级，客户想借春节把"健康问题就找阿福"的心智打出去。我洞察到春节最大的流量入口是支付宝集福，最核心的情绪是"回家"和对家人的牵挂，于是把阿福从"个人健康工具"转译成"家庭健康陪伴"，锚定"带健康回家"场景，提出#把阿福带回家#。流量端联动支付宝集福，用户通过小红书站内H5跳转蚂蚁阿福app领健康福红包，完成从曝光到激活的闭环；内容端用多圈层KOL分层渗透——头部做话题引爆，腰部做场景种草，AI和家庭向博主讲功能场景，剧情搞笑类博主走春节社交场景，公益向博主从乡村医生专业角度切入，个人成长类博主锚定新年健康计划，从家庭场景、社交情绪到个人规划完成多圈层覆盖。最终"健康问题就找阿福"从一句功能口号，变成了春节场景里的情感共识。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-label">活动总曝光</div><div class="data-value">4.54亿+</div></div>
+      <div class="data-card"><div class="data-label">UGC笔记量</div><div class="data-value">4.3万+篇</div></div>
+      <div class="data-card"><div class="data-label">内容曝光量</div><div class="data-value">+5574%</div></div>
+      <div class="data-card"><div class="data-label">内容渗透率</div><div class="data-value">+3440%</div></div>
+    </div>
+    <div style="margin-top:6px;">
+      <div class="data-card" style="display:inline-block;padding:6px 14px;"><div class="data-label">品牌专区CTR (benchmark 24%)</div><div class="data-value" style="font-size:15px;">46%</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 可画 -->
+  <div class="project">
+    <div class="project-header">
+      <img src="canva1.png" class="project-img" alt="可画">
+      <div>
+        <div class="project-title">可画-从灵感到爆款</div>
+        <div class="project-tag">#爆款封面设计小赛 · 营销策划方案</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <span><strong>品牌</strong>：Canva可画</span>
+      <span><strong>合作IP</strong>：小红书设计周</span>
+      <span><strong>时间</strong>：2026.4.8—5.7</span>
+      <span><strong>话题词</strong>：#爆款封面设计小赛 #从灵感到爆款</span>
+    </div>
+    <p class="project-overview">Canva可画长期主打"低门槛设计工具"，但用户认知停留在"做海报的"，工具属性强、情感粘性弱，核心诉求是找到更精准的人群切口，把"工具能力"转化为"内容能力"。我洞察到小红书站内正兴起"民间小赛"热潮，同时自媒体创作者有一个极其具体的痛点——封面决定笔记生死，但很多人有灵感没技术。于是借势小赛形态，把目标收窄到自媒体创作者，策划「爆款封面设计小赛」，话题词#从灵感到爆款#。不走传统专业设计比赛路线，而是用小赛的轻量感和社交感降低参与门槛，让用户用可画AI或模板设计小红书封面，几分钟即可出图，真正实现从灵感到爆款的闭环。KOL围绕"封面焦虑"精选实用向博主——自媒体博主分享从0到1的设计过程、设计类博主拆解爆款封面特性、个人成长类博主从创作者进阶切入，用多元内容形态覆盖人群需求，核心都锚定在"怎么做封面"的实用价值上。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-label">曝光量</div><div class="data-value">3.18亿+</div><div class="data-sub">溢出预期478%</div></div>
+      <div class="data-card"><div class="data-label">UGC笔记量</div><div class="data-value">4.3万篇</div><div class="data-sub">溢出预期275%</div></div>
+      <div class="data-card"><div class="data-label">自媒体人群渗透率</div><div class="data-value">+42.3%</div></div>
+      <div class="data-card"><div class="data-label">内容创作职业人群</div><div class="data-value">+54.31%</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Page 5: 美团 + 新东方 -->
+<div class="page">
+  <!-- 美团 -->
+  <div class="project">
+    <div class="project-header">
+      <img src="meituan1.jpg" class="project-img" alt="美团">
+      <div>
+        <div class="project-title">美团外卖-第一届黄衣服设计大赛</div>
+        <div class="project-tag">#黄衣服设计大赛 · 营销策划方案</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <span><strong>品牌</strong>：美团外卖</span>
+      <span><strong>合作IP</strong>：小红书设计周</span>
+      <span><strong>时间</strong>：2026.4.1—5.16</span>
+      <span><strong>话题词</strong>：#第一届黄衣服设计大赛</span>
+    </div>
+    <p class="project-overview">美团外卖联合小红书设计周，发起「第一届黄衣服设计大赛」，以美团骑手标志性的"黄衣服"为创意核心，向全平台用户征集骑手工服设计灵感。活动鼓励用户从骑手真实需求出发，提交设计图或创意建议，将一件日常工服转化为可讨论、可共创的社会话题。通过低门槛的"全民参设计"机制——无论专业与否，人人都可提交设计想法——成功撬动大量UGC内容自发涌现，让品牌与用户之间形成了一次"你提需求、我来实现"的深度共创对话，有效提升了美团外卖的品牌话题热度与社会影响力。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-label">活动总曝光量</div><div class="data-value">1.98亿+</div></div>
+      <div class="data-card"><div class="data-label">话题页浏览量</div><div class="data-value">2,430万+</div></div>
+      <div class="data-card"><div class="data-label">UGC笔记量</div><div class="data-value">4k+篇</div></div>
+      <div class="data-card"><div class="data-label">KOL曝光量</div><div class="data-value">342万+</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 新东方 -->
+  <div class="project">
+    <div class="project-header">
+      <img src="xdf1.jpg" class="project-img" alt="新东方">
+      <div>
+        <div class="project-title">新东方在线考研-我的研路moment</div>
+        <div class="project-tag">#我的研路moment · 营销策划方案</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <span><strong>品牌</strong>：新东方在线考研</span>
+      <span><strong>合作IP</strong>：小红书「红薯研学社」</span>
+      <span><strong>时间</strong>：2026.2.23—4.22</span>
+      <span><strong>话题词</strong>：#我的研路moment</span>
+    </div>
+    <p class="project-overview">新东方在线考研联合小红书「红薯研学社」IP，在考研出分季发起「我的研路moment」话题活动，邀请考研人分享备考旅途中的成长瞬间。活动以"研路时刻"这一情绪切口替代传统硬广说教，让品牌成为考研人情感共振的陪伴者。传播上创新采用考研名师IP化运营策略——王江涛、董仲蠡、谭剑波等新东方名师集体"破圈"出演创意微短剧（甄嬛传考研版、单词狼人杀、抽象直播等），在名师本人账号发布后实现病毒式传播，成功将"新东方=考研伙伴"的心智植入红薯地考研人群。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-label">活动总曝光量</div><div class="data-value">4.8亿+</div></div>
+      <div class="data-card"><div class="data-label">UGC笔记沉淀</div><div class="data-value">8.7万+篇</div></div>
+      <div class="data-card"><div class="data-label">考研人群渗透率</div><div class="data-value">+99.61%</div></div>
+      <div class="data-card"><div class="data-label">在校考研SPU渗透率</div><div class="data-value">+178.83%</div></div>
+    </div>
+    <div style="margin-top:6px;">
+      <div class="data-card" style="display:inline-block;padding:6px 14px;"><div class="data-label">KOL笔记曝光量</div><div class="data-value" style="font-size:15px;">1,169万+ (三位名师笔记曝光总量62.7万+)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Page 6: 作业帮 + 招商银行 -->
+<div class="page">
+  <!-- 作业帮 -->
+  <div class="project">
+    <div class="project-header">
+      <img src="zyb1.jpg" class="project-img" alt="作业帮">
+      <div>
+        <div class="project-title">作业帮AI学习机-AI家教请到家</div>
+        <div class="project-tag">#AI家教请到家 · 营销策划方案</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <span><strong>品牌</strong>：作业帮AI学习机</span>
+      <span><strong>合作IP</strong>：小红书「小红花家长会」</span>
+      <span><strong>时间</strong>：2026.5.20—6.18</span>
+    </div>
+    <div class="project-info">
+      <span><strong>品牌话题词</strong>：#AI家教请到家</span>
+      <span><strong>IP主阵地话题词</strong>：#小红花家长会 | #小红花AI学习好搭子 | #618AI学习好物清单</span>
+    </div>
+    <p class="project-overview">作业帮AI学习机联合小红书「小红花家长会」IP，发起「AI家教请到家」话题活动。本次活动重点在于精准筛选并强化作业帮AI学习机的核心功能认知——突出"AI家教"功能，围绕"AI精准学""AI诊断""AI辅导"等高价值功能点，以"把AI家教请到家"为沟通话术，将功能利益转化为家长可感知的"解放家长、精准助学"场景价值。活动深度绑定小红花家长会IP主阵地，获「小红花AI学习好搭子」官方推荐笔记及「618AI学习好物清单」专题植入，同时落地线下「AI学习体验展」快闪活动，打造「家的一平米」主题展位，实现"AI家教"功能教育—场景种草—线下体验的认知强化全链路。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-label">活动总曝光量</div><div class="data-value">9,830万</div></div>
+      <div class="data-card"><div class="data-label">线下快闪客流量</div><div class="data-value">9万+</div></div>
+      <div class="data-card"><div class="data-label">UGC笔记沉淀量</div><div class="data-value">3.5万+篇</div></div>
+      <div class="data-card"><div class="data-label">教辅工具类人群渗透率</div><div class="data-value">+218.7%</div></div>
+    </div>
+    <div style="margin-top:6px;">
+      <div class="data-card" style="display:inline-block;padding:6px 14px;"><div class="data-label">X60ultra学习机SPU人群渗透率</div><div class="data-value" style="font-size:15px;">+414.5%</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 招商银行 -->
+  <div class="project">
+    <div class="project-header">
+      <img src="zhkj1.jpg" class="project-img" alt="招商银行">
+      <div>
+        <div class="project-title">招商银行-跨境有招不同返享</div>
+        <div class="project-tag">#跨境有招不同返享 · 营销策划方案</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <span><strong>品牌</strong>：招商银行</span>
+      <span><strong>合作IP</strong>：小红书「海外薯·通关宝典」</span>
+      <span><strong>时间</strong>：2026.1.7—3.9</span>
+      <span><strong>话题词</strong>：#跨境有招不同返享</span>
+    </div>
+    <p class="project-overview">招商银行联合小红书「海外薯·通关宝典」IP，发起「跨境有招不同返享」话题活动，以「招商银行万事达借记卡」为核心产品，传递"境内境外都好用，跨境支付不用愁"的核心主张。活动精准捕捉春节及寒假出境旅行高峰节点，通过话题活动、博主种草、线下快闪、H5聚合等全链路资源整合，将专业的跨境金融服务转化为用户可感知的出行场景解决方案——用真实的境外消费攻略、支付体验分享替代传统产品说教。活动深度绑定海外薯IP主阵地，并落地线下快闪互动展位，实现"攻略种草—场景验证—体验转化"的完整链路，成功抢占"跨境支付好搭子"的品类心智。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-label">活动总曝光量</div><div class="data-value">1.8亿+</div></div>
+      <div class="data-card"><div class="data-label">KOL笔记累计曝光</div><div class="data-value">1,072万+</div></div>
+      <div class="data-card"><div class="data-label">UGC笔记沉淀量</div><div class="data-value">5.1万+篇</div></div>
+      <div class="data-card"><div class="data-label">借记卡类人群渗透率</div><div class="data-value">+1,050%</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Page 7: 英特尔EVO -->
+<div class="page">
+  <!-- 英特尔EVO -->
+  <div class="project">
+    <div class="project-header">
+      <img src="ggjb1-poster.jpg" class="project-img" alt="英特尔EVO" onerror="this.style.display='none'">
+      <div>
+        <div class="project-title">英特尔EVO超能本-AIGC创作超给力</div>
+        <div class="project-tag">乐队的夏天3 · 广告脚本</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <span><strong>品牌</strong>：英特尔</span>
+      <span><strong>产品</strong>：英特尔EVO超能本（内置AI对话功能）</span>
+    </div>
+    <div class="project-info">
+      <span><strong>Slogan</strong>：英特尔EVO超能本，AIGC创作超给力</span>
+      <span><strong>合作IP</strong>：乐队的夏天3</span>
+    </div>
+    <p class="project-overview">英特尔EVO超能本借势《乐队的夏天3》中麻园诗人改编《彩虹的微笑》这一高热度事件，以采访间对话形式拍摄品牌TVC。短片创意设定为：麻园诗人在上场前向英特尔EVO超能本内置的AI对话功能请教表演建议，AI给出"表情要自然、眼神要深情、嘴角要上扬、身体要放松"四个回答，每位成员认领一条后，画面回放其在节目中"努力营业"的幽默反差片段，形成强喜剧效果。结尾借节目中"特别好"的经典梗收尾，由AI说出"亚东老师会说特别好"，将节目热梗、AI功能与品牌slogan自然串联，以娱乐化内容降低AI技术的认知门槛，生动传递"英特尔EVO超能本帮助创作者高效产出"的核心价值。</p>
+    <div class="data-grid" style="grid-template-columns:1fr;">
+      <div class="data-card" style="text-align:left;padding:10px 16px;">
+        <div class="data-label">微博视频播放量</div>
+        <div class="data-value" style="font-size:20px;">122万+ <span style="font-size:13px;color:#999;font-weight:400;">为所有植入广告中表现最优</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
